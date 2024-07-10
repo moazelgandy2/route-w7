@@ -1,6 +1,13 @@
-import { MongoClient } from "mongodb";
-const url = "mongodb://localhost:27017";
-const client = new MongoClient(url);
+import { MongoClient, ServerApiVersion } from "mongodb";
+const uri =
+  "mongodb+srv://moaz:YRHnMG0wVyUPTCkR@cluster0.i73rgqx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
 const dbName = "w7-route";
 
 client
