@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.specialRouter = void 0;
+var express_1 = require("express");
+var special_controller_1 = require("./special.controller");
+var specialRouter = (0, express_1.Router)();
+exports.specialRouter = specialRouter;
+specialRouter.get("/search", special_controller_1.searchCars);
+specialRouter.get("/getAvailable", special_controller_1.getAvailableCars);
+specialRouter.get("/modelOrRented", special_controller_1.getByModelOrRented);
+specialRouter.get("/cars", special_controller_1.getByAvailableOrRented);

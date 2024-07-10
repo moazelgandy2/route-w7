@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.rentRouter = void 0;
+var express_1 = require("express");
+var rent_controller_1 = require("./rent.controller");
+var rentRouter = (0, express_1.Router)();
+exports.rentRouter = rentRouter;
+rentRouter.get("/", rent_controller_1.getRents);
+rentRouter.get("/:id", rent_controller_1.getRent);
+rentRouter.post("/", rent_controller_1.addRent);
+rentRouter.put("/:id", rent_controller_1.updateRent);
+rentRouter.delete("/:id", rent_controller_1.deleteRent);
